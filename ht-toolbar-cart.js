@@ -1,8 +1,8 @@
 "use strict";
-import { LitElement, html } from "../@polymer/lit-element/lit-element.js";
-import "../@polymer/iron-iconset-svg/iron-iconset-svg.js";
-import "../@polymer/paper-icon-button/paper-icon-button.js";
-import "../@polymer/paper-styles/default-theme.js";
+import { LitElement, html } from "@polymer/lit-element";
+import "@polymer/iron-iconset-svg";
+import "@polymer/paper-icon-button";
+import "@polymer/paper-styles/default-theme.js";
 
 class HTToolbarCart extends LitElement {
   render({ href, quantity }) {
