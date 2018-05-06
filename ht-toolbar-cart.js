@@ -5,7 +5,7 @@ import "@polymer/paper-icon-button";
 import "@polymer/paper-styles/default-theme.js";
 
 class HTToolbarCart extends LitElement {
-  render({ href, quantity }) {
+  _render({ href, quantity }) {
     return html`
       <style>
         :host {
