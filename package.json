@@ -1,10 +1,10 @@
 {
-  "name": "ht-toolbar-cart",
+  "name": "@01ht/ht-toolbar-cart",
   "version": "1.0.0",
   "main": "ht-toolbar-cart.js",
-  "repository": "https://github.com/maksimyurkov/ht-toolbar-cart",
-  "author": "maksimyurkov <yurkov.maksim.sergeevich@gmail.com>",
-  "license": "MIT",
+  "repository": "01ht/ht-toolbar-cart",
+  "author": "01ht Ltd",
+  "license": "UNLICENSED",
   "dependencies": {
     "@polymer/lit-element": "^0.5.1",
     "@polymer/iron-iconset-svg": "^3.0.0-pre.18",
