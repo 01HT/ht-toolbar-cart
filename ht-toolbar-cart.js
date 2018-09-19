@@ -5,7 +5,8 @@ import "@polymer/paper-icon-button";
 import "@polymer/paper-styles/default-theme.js";
 
 class HTToolbarCart extends LitElement {
-  _render({ href, quantity }) {
+  render() {
+    const { href, quantity } = this;
     return html`
       <style>
         :host {
@@ -59,12 +60,11 @@ class HTToolbarCart extends LitElement {
       </iron-iconset-svg>
 
       <div id="container">
-          <a href$=${href}>
-              <paper-icon-button icon="ht-toolbar-cart-icons:shopping-cart"></paper-icon-button>
+          <a href=${href}>
+            <paper-icon-button icon="ht-toolbar-cart-icons:shopping-cart"></paper-icon-button>
           </a>
-          <div id="badge" aria-hidden="true" hidden?=${
-            quantity === 0 ? true : false
-          }>${quantity}</div>
+      <div id="badge" aria-hidden="true" ?hidden=${quantity ===
+        0}>${quantity}</div>
       </div>
 `;
   }
@@ -74,7 +74,7 @@ class HTToolbarCart extends LitElement {
   }
 
   static get properties() {
-    return { href: String, quantity: Number };
+    return { href: { type: String }, quantity: { type: Number } };
   }
 }
 
