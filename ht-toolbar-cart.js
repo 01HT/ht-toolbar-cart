@@ -61,7 +61,7 @@ class HTToolbarCart extends LitElement {
 
       <div id="container">
           <a href=${href}>
-            <paper-icon-button icon="ht-toolbar-cart-icons:shopping-cart"></paper-icon-button>
+            <paper-icon-button icon="ht-toolbar-cart-icons:shopping-cart" alt="Перейти в корзину"></paper-icon-button>
           </a>
       <div id="badge" aria-hidden="true" ?hidden=${quantity ===
         0}>${quantity}</div>
