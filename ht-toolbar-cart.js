@@ -1,54 +1,55 @@
 "use strict";
-import { LitElement, html } from "@polymer/lit-element";
+import { LitElement, html, css } from "lit-element";
 import "@polymer/iron-iconset-svg";
 import "@polymer/paper-icon-button";
 import "@polymer/paper-styles/default-theme.js";
 
 class HTToolbarCart extends LitElement {
+  static styles = css`<style>
+    :host {
+      display: block;
+      position: relative;
+      box-sizing: border-box;
+    }
+
+    #container {
+      position: relative;
+    }
+
+    #badge {
+      position: absolute;
+      top: -2px;
+      right: 0;
+      width: 20px;
+      height: 20px;
+      background-color: var(--accent-color);
+      border-radius: 50%;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 500;
+      pointer-events: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    a {
+      text-decoration: none;
+    }
+
+    paper-icon-button {
+      color:var(--secondary-text-color);
+    }
+    
+    #badge[hidden] {
+      display: none;
+    }
+  </style>`;
+
   render() {
     const { href, quantity } = this;
     return html`
-      <style>
-        :host {
-          display: block;
-          position: relative;
-          box-sizing: border-box;
-        }
-
-        #container {
-          position: relative;
-        }
-
-        #badge {
-          position: absolute;
-          top: -2px;
-          right: 0;
-          width: 20px;
-          height: 20px;
-          background-color: var(--accent-color);
-          border-radius: 50%;
-          color: #fff;
-          font-size: 12px;
-          font-weight: 500;
-          pointer-events: none;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-        }
-      
-        a {
-          text-decoration: none;
-        }
-
-        paper-icon-button {
-          color:var(--secondary-text-color);
-        }
-        
-        #badge[hidden] {
-          display: none;
-        }
-      </style>
       <iron-iconset-svg size="24" name="ht-toolbar-cart-icons">
           <svg>
               <defs>
@@ -60,17 +61,13 @@ class HTToolbarCart extends LitElement {
       </iron-iconset-svg>
 
       <div id="container">
-          <a href=${href}>
+          <a href="${href}">
             <paper-icon-button icon="ht-toolbar-cart-icons:shopping-cart" alt="Перейти в корзину"></paper-icon-button>
           </a>
-      <div id="badge" aria-hidden="true" ?hidden=${quantity ===
-        0}>${quantity}</div>
+      <div id="badge" aria-hidden="true" ?hidden="${quantity ===
+        0}">${quantity}</div>
       </div>
 `;
-  }
-
-  static get is() {
-    return "ht-toolbar-cart";
   }
 
   static get properties() {
@@ -78,4 +75,4 @@ class HTToolbarCart extends LitElement {
   }
 }
 
-customElements.define(HTToolbarCart.is, HTToolbarCart);
+customElements.define("ht-toolbar-cart", HTToolbarCart);
