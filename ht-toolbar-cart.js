@@ -4,48 +4,49 @@ import "@polymer/iron-iconset-svg";
 import "@polymer/paper-icon-button";
 import "@polymer/paper-styles/default-theme.js";
 
+import { stylesBasicWebcomponents } from "@01ht/ht-theme/styles";
+
 class HTToolbarCart extends LitElement {
-  static styles = css`<style>
-    :host {
-      display: block;
-      position: relative;
-      box-sizing: border-box;
-    }
+  static get styles() {
+    return [
+      stylesBasicWebcomponents,
+      css`
+        #container {
+          position: relative;
+        }
 
-    #container {
-      position: relative;
-    }
+        #badge {
+          position: absolute;
+          top: -2px;
+          right: 0;
+          width: 20px;
+          height: 20px;
+          background-color: var(--accent-color);
+          border-radius: 50%;
+          color: #fff;
+          font-size: 12px;
+          font-weight: 500;
+          pointer-events: none;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+        }
 
-    #badge {
-      position: absolute;
-      top: -2px;
-      right: 0;
-      width: 20px;
-      height: 20px;
-      background-color: var(--accent-color);
-      border-radius: 50%;
-      color: #fff;
-      font-size: 12px;
-      font-weight: 500;
-      pointer-events: none;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-  
-    a {
-      text-decoration: none;
-    }
+        a {
+          text-decoration: none;
+        }
 
-    paper-icon-button {
-      color:var(--secondary-text-color);
-    }
-    
-    #badge[hidden] {
-      display: none;
-    }
-  </style>`;
+        paper-icon-button {
+          color: var(--secondary-text-color);
+        }
+
+        #badge[hidden] {
+          display: none;
+        }
+      `
+    ];
+  }
 
   render() {
     const { href, quantity } = this;
